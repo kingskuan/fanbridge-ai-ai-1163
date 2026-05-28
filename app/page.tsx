@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Inter } from 'next/font/google'
-import { ChevronRightIcon, PlayIcon, StarIcon, TrophyIcon, BoltIcon, ShieldCheckIcon, MicrophoneIcon, CpuChipIcon, ChartBarIcon } from '@heroicons/react/24/outline'
+import { ChevronRight as ChevronRightIcon, Play as PlayIcon, Star as StarIcon, Trophy as TrophyIcon, Zap as BoltIcon, ShieldCheck as ShieldCheckIcon, Mic as MicrophoneIcon, Cpu as CpuChipIcon, BarChart3 as ChartBarIcon } from 'lucide-react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -429,5 +429,20 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="relative z-10 px-6 py-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto text-center">    )
-  }
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg flex items-center justify-center">
+              <CpuChipIcon className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-lg font-semibold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              FanBridge AI
+            </span>
+          </div>
+          <p className="text-gray-400 text-sm">
+            © 2026 FanBridge AI · Built by Claude Vibe Coding
+          </p>
+        </div>
+      </footer>
+    </div>
+  )
+}
