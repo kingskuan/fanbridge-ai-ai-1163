@@ -5,8 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -p ${PORT:-3000}",
+    "lint": "next lint",
+    "hh:compile": "hardhat compile",
+    "hh:deploy:xlayer-testnet": "hardhat run scripts/deploy.ts --network xlayerTestnet",
+    "hh:deploy:xlayer": "hardhat run scripts/deploy.ts --network xlayer",
+    "hh:verify:xlayer-testnet": "hardhat verify --network xlayerTestnet"
   },
   "dependencies": {
     "next": "14.2.35",
@@ -16,7 +20,8 @@
     "lucide-react": "^0.400.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "tailwind-merge": "^2.3.0"
+    "tailwind-merge": "^2.3.0",
+    "viem": "^2.21.0"
   },
   "devDependencies": {
     "typescript": "^5",
@@ -27,6 +32,10 @@
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
     "eslint": "^8",
-    "eslint-config-next": "14.2.35"
+    "eslint-config-next": "14.2.35",
+    "hardhat": "^2.22.10",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2"
   }
 }
