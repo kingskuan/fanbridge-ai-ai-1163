@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Inter } from 'next/font/google'
 import { ChevronRight as ChevronRightIcon, Play as PlayIcon, Star as StarIcon, Trophy as TrophyIcon, Zap as BoltIcon, ShieldCheck as ShieldCheckIcon, Mic as MicrophoneIcon, Cpu as CpuChipIcon, BarChart3 as ChartBarIcon } from 'lucide-react'
+import { XLayerPanel } from '@/components/XLayerPanel'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -341,8 +342,11 @@ export default function HomePage() {
         </div>
       </motion.section>
 
+      {/* X Layer On-chain Panel */}
+      <XLayerPanel />
+
       {/* Hackathon Info Section */}
-      <motion.section 
+      <motion.section
         id="hackathon"
         className="relative z-10 px-6 py-20"
         initial={{ opacity: 0 }}

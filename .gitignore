@@ -6,3 +6,8 @@ node_modules/
 .DS_Store
 out/
 build/
+
+# Hardhat
+cache/
+artifacts/
+typechain-types/
