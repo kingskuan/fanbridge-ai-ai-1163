@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Inter } from 'next/font/google'
-import { ChevronRightIcon, PlayIcon, StarIcon, TrophyIcon, BoltIcon, ShieldCheckIcon, MicrophoneIcon, CpuChipIcon, ChartBarIcon } from '@heroicons/react/24/outline'
+import { ChevronRight, Play, Star, Trophy, Zap, ShieldCheck, Mic, Cpu, BarChart3 } from 'lucide-react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,27 +14,27 @@ export default function HomePage() {
 
   const features = [
     {
-      icon: CpuChipIcon,
+      icon: Cpu,
       title: 'AI自动交易代理',
       description: '智能分析赛事数据，自动执行最优交易策略'
     },
     {
-      icon: MicrophoneIcon,
+      icon: Mic,
       title: '语音交互界面',
       description: '自然语言交流，降低Web3使用门槛'
     },
     {
-      icon: ShieldCheckIcon,
+      icon: ShieldCheck,
       title: '风险管理算法',
       description: '实时监控投注组合，智能风险控制'
     }
   ]
 
   const stats = [
-    { label: '奖金池', value: '14,000 USDT', icon: TrophyIcon },
-    { label: '一等奖', value: '5,000 USDT', icon: StarIcon },
-    { label: '区块链', value: 'X Layer', icon: BoltIcon },
-    { label: '评分方式', value: 'AI+人工', icon: ChartBarIcon }
+    { label: '奖金池', value: '14,000 USDT', icon: Trophy },
+    { label: '一等奖', value: '5,000 USDT', icon: Star },
+    { label: '区块链', value: 'X Layer', icon: Zap },
+    { label: '评分方式', value: 'AI+人工', icon: BarChart3 }
   ]
 
   const slides = [
@@ -71,7 +71,15 @@ export default function HomePage() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  if (!mounted) return null
+  if (!mounted) {
+    return (
+      <div className={`${inter.className} min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 text-white overflow-hidden`} suppressHydrationWarning>
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="w-10 h-10 border-4 border-purple-500 border-t-transparent rounded-full animate-spin" />
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className={`${inter.className} min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 text-white overflow-hidden`}>
@@ -101,7 +109,7 @@ export default function HomePage() {
             whileHover={{ scale: 1.02 }}
           >
             <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center">
-              <CpuChipIcon className="w-6 h-6 text-white" />
+              <Cpu className="w-6 h-6 text-white" />
             </div>
             <div>
               <h1 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
@@ -148,7 +156,7 @@ export default function HomePage() {
                       animate={{ scale: [1, 1.05, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
-                      <TrophyIcon className="w-4 h-4 text-yellow-400 mr-2" />
+                      <Trophy className="w-4 h-4 text-yellow-400 mr-2" />
                       <span className="text-sm text-purple-300">OKX Web3 开发者挑战赛参赛项目</span>
                     </motion.div>
 
@@ -176,7 +184,7 @@ export default function HomePage() {
                   className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl font-semibold text-lg flex items-center justify-center group"
                 >
                   开始使用 AI 助手
-                  <ChevronRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
 
                 <motion.button 
@@ -184,7 +192,7 @@ export default function HomePage() {
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl font-semibold text-lg flex items-center justify-center group hover:bg-white/10 transition-all"
                 >
-                  <PlayIcon className="w-5 h-5 mr-2" />
+                  <Play className="w-5 h-5 mr-2" />
                   观看演示
                 </motion.button>
               </div>
@@ -332,7 +340,7 @@ export default function HomePage() {
                     className="mt-6 text-purple-400 font-medium flex items-center group-hover:text-cyan-400 transition-colors cursor-pointer"
                     whileHover={{ x: 5 }}
                   >
-                    了解更多 <ChevronRightIcon className="w-4 h-4 ml-1" />
+                    了解更多 <ChevronRight className="w-4 h-4 ml-1" />
                   </motion.div>
                 </div>
               </motion.div>
@@ -372,15 +380,15 @@ export default function HomePage() {
 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <TrophyIcon className="w-6 h-6 text-yellow-400" />
+                    <Trophy className="w-6 h-6 text-yellow-400" />
                     <span className="text-gray-300">奖金池总计 <span className="text-white font-bold">14,000 USDT</span></span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <StarIcon className="w-6 h-6 text-purple-400" />
+                    <Star className="w-6 h-6 text-purple-400" />
                     <span className="text-gray-300">一等奖 <span className="text-white font-bold">5,000 USDT</span> + 官方PR支持</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <BoltIcon className="w-6 h-6 text-cyan-400" />
+                    <Zap className="w-6 h-6 text-cyan-400" />
                     <span className="text-gray-300">部署在 <span className="text-white font-bold">X Layer</span> 区块链</span>
                   </div>
                 </div>
@@ -391,7 +399,7 @@ export default function HomePage() {
                   className="mt-8 px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl font-semibold text-lg flex items-center group"
                 >
                   参与黑客松
-                  <ChevronRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </div>
 
@@ -429,5 +437,19 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="relative z-10 px-6 py-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto text-center">    )
-  }
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="flex items-center justify-center space-x-3 mb-6">
+            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg flex items-center justify-center">
+              <Cpu className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-lg font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              FanBridge AI
+            </span>
+          </div>
+          <p className="text-gray-400 mb-4">AI球迷经纪人助手 - OKX Web3 开发者挑战赛参赛项目</p>
+          <p className="text-gray-500 text-sm">&copy; 2026 FanBridge AI. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  )
+}
