@@ -429,5 +429,19 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="relative z-10 px-6 py-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto text-center">    )
-  }
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center">
+              <CpuChipIcon className="w-6 h-6 text-white" />
+            </div>
+            <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              FanBridge AI
+            </span>
+          </div>
+          <p className="text-gray-400">AI球迷经纪人助手 · 数亿球迷的Web3入口</p>
+          <p className="text-sm text-gray-500 mt-2">© 2026 FanBridge AI. Build X Hackathon 参赛项目.</p>
+        </div>
+      </footer>
+    </div>
+  )
+}
