@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "tsc test/logic.test.ts --outDir .test-out --module commonjs --target es2020 --moduleResolution node --skipLibCheck --esModuleInterop && node .test-out/test/logic.test.js"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

@@ -5,8 +5,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'FanBridge AI — AI球迷经纪人助手',
-  description: 'Built with Claude Vibe Coding',
+  title: 'FanBridge AI — X Layer 链上经纪人',
+  description:
+    'AI 驱动的 X Layer 链上助手：用自然语言或语音连接钱包、切换网络、查询并转账 OKB。',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
